@@ -12,7 +12,7 @@
     <ion-list>
       <ion-item>
         <ion-label fixed>Title</ion-label>
-        <ion-input type="text" placeholder="Interesting building..." name="Title" ngModel required></ion-input>
+        <ion-input type="text" placeholder="Interesting building..." name="title" ngModel required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Short Description</ion-label>
@@ -23,7 +23,7 @@
       <ion-row>
         <ion-col>
           <button ion-button outline block icon-start type="button" (click)="onLocate()">
-            <ion-icon name="star"></ion-icon>
+            <ion-icon name="pin"></ion-icon>
             Locate me!
           </button>
         </ion-col>
@@ -58,12 +58,12 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <img [src]="">
+          <img [src]="imageUrl" />
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <button ion-button color="secondary" block type="submit" [disabled]="!f.valid">
+          <button ion-button color="secondary" block type="submit" [disabled]="!f.valid || !locationIsSet">
             Add this Place
           </button>
         </ion-col>

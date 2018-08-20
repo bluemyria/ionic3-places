@@ -12,5 +12,15 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-card *ngFor="let place of places; let i = index" (click)="onOpenPlace(place, i)">
+    <img [src]="place.imageUrl" *ngIf="place.imageUrl != ''">
+    <ion-card-content text-center>
+      <ion-card-title>
+        {{ place.title}}
+      </ion-card-title>
+      <p>
+        {{ place.description }}
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
