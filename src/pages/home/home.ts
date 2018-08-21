@@ -16,11 +16,19 @@ export class HomePage implements OnInit {
   constructor(private modalCtrl: ModalController, private placesService: PlacesService) { }
 
   ngOnInit() {
-    this.placesService.fetchPlaces();
+    this.placesService.fetchPlaces()
+      .then(
+        (places: Place[]) => {
+          this.places = places;
+        });
   }
 
   ionViewWillEnter() {
-    this.places = this.placesService.loadPlaces();
+    this.placesService.fetchPlaces()
+      .then(
+        (places: Place[]) => {
+          this.places = places;
+        });
   }
 
   onOpenPlace(place: Place, index: number) {

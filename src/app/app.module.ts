@@ -14,7 +14,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { PlacesService } from '../services/places.service';
-import { IonicStorageModule, Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
